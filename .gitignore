@@ -25,3 +25,5 @@ pnpm-debug.log*
 
 .vscode
 .playwright-mcpscreenshot-*.jpeg
+.playwright-mcp/
+
