@@ -1,0 +1,185 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "スーパーせい屋 トップページへ" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: スーパーせい屋
+      - navigation "メインナビゲーション" [ref=e6]:
+        - link "トップ" [ref=e7] [cursor=pointer]:
+          - /url: /
+        - link "お店について" [ref=e8] [cursor=pointer]:
+          - /url: /about
+        - link "商品・こだわり" [ref=e9] [cursor=pointer]:
+          - /url: /products
+        - link "アクセス" [ref=e10] [cursor=pointer]:
+          - /url: /access
+  - main [ref=e11]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - paragraph [ref=e15]: 岩手県一関市 ／ 地元密着30年以上
+        - heading "地元の食材で、 毎日の食卓を豊かに。" [level=1] [ref=e16]:
+          - text: 地元の食材で、
+          - text: 毎日の食卓を豊かに。
+        - paragraph [ref=e17]:
+          - text: 朝採れ野菜・気仙沼の鮮魚・手作りのお惣菜。
+          - text: 大切な人たちとの食卓のために、今日も丁寧に仕入れています。
+        - generic [ref=e18]:
+          - link "商品・こだわりを見る" [ref=e19] [cursor=pointer]:
+            - /url: /products
+          - link "アクセスを確認する" [ref=e20] [cursor=pointer]:
+            - /url: /access
+      - generic [ref=e23]: 
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - paragraph [ref=e27]: WHY SUPER SEIYA
+        - heading "地元のお客様に選ばれる理由" [level=2] [ref=e28]
+      - generic [ref=e29]:
+        - generic [ref=e30]:
+          - generic [ref=e32]: 
+          - heading "地元産・朝採れ野菜" [level=3] [ref=e33]
+          - paragraph [ref=e34]: 一関近郊の契約農家から直送。スーパーの棚に並ぶのは収穫から数時間以内の新鮮な野菜たちです。
+        - generic [ref=e35]:
+          - generic [ref=e37]: 
+          - heading "顔の見える関係" [level=3] [ref=e38]
+          - paragraph [ref=e39]: 農家さん・漁師さんと30年以上のお付き合い。生産者の顔が見えるから安心してお買い物いただけます。
+        - generic [ref=e40]:
+          - generic [ref=e42]: 
+          - heading "手作りのお惣菜" [level=3] [ref=e43]
+          - paragraph [ref=e44]: 毎朝店内で仕込む手作りのお惣菜。添加物を極力使わない、家庭の味を大切にしています。
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - paragraph [ref=e48]: OUR CORNERS
+        - heading "充実の売り場をご紹介" [level=2] [ref=e49]
+      - generic [ref=e50]:
+        - link "野菜コーナー 地元農家の朝採れ野菜" [ref=e51] [cursor=pointer]:
+          - /url: /products
+          - generic [ref=e53]: 
+          - heading "野菜コーナー" [level=3] [ref=e54]
+          - paragraph [ref=e55]: 地元農家の朝採れ野菜
+        - link "鮮魚コーナー 気仙沼・大船渡直送の鮮魚" [ref=e56] [cursor=pointer]:
+          - /url: /products
+          - generic [ref=e58]: 
+          - heading "鮮魚コーナー" [level=3] [ref=e59]
+          - paragraph [ref=e60]: 気仙沼・大船渡直送の鮮魚
+        - link "精肉コーナー 岩手県産ブランド肉を厳選" [ref=e61] [cursor=pointer]:
+          - /url: /products
+          - generic [ref=e63]: 
+          - heading "精肉コーナー" [level=3] [ref=e64]
+          - paragraph [ref=e65]: 岩手県産ブランド肉を厳選
+        - link "お惣菜コーナー 毎朝仕込む手作りお惣菜" [ref=e66] [cursor=pointer]:
+          - /url: /products
+          - generic [ref=e68]: 
+          - heading "お惣菜コーナー" [level=3] [ref=e69]
+          - paragraph [ref=e70]: 毎朝仕込む手作りお惣菜
+        - link "地元産コーナー 一関・平泉の特産品を集めました" [ref=e71] [cursor=pointer]:
+          - /url: /products
+          - generic [ref=e73]: 
+          - heading "地元産コーナー" [level=3] [ref=e74]
+          - paragraph [ref=e75]: 一関・平泉の特産品を集めました
+    - generic [ref=e77]:
+      - generic [ref=e78]:
+        - paragraph [ref=e79]: REVIEWS
+        - heading "お客様の声" [level=2] [ref=e80]
+      - generic [ref=e81]:
+        - generic [ref=e82]:
+          - generic [ref=e83]:
+            - generic [ref=e84]: 
+            - generic [ref=e85]: 
+            - generic [ref=e86]: 
+            - generic [ref=e87]: 
+            - generic [ref=e88]: 
+          - paragraph [ref=e89]: 「引っ越してきてすぐに来店しました。野菜がとにかく新鮮で、スタッフさんの笑顔がとても素敵です。今ではすっかり常連です。」
+          - paragraph [ref=e90]: 田中さん（40代・主婦）
+        - generic [ref=e91]:
+          - generic [ref=e92]:
+            - generic [ref=e93]: 
+            - generic [ref=e94]: 
+            - generic [ref=e95]: 
+            - generic [ref=e96]: 
+            - generic [ref=e97]: 
+          - paragraph [ref=e98]: 「お惣菜が美味しくて毎日寄ってしまいます。子どもたちも大好きで、帰り道に立ち寄るのが我が家の習慣になりました。」
+          - paragraph [ref=e99]: 佐藤さん（30代・子育て中）
+        - generic [ref=e100]:
+          - generic [ref=e101]:
+            - generic [ref=e102]: 
+            - generic [ref=e103]: 
+            - generic [ref=e104]: 
+            - generic [ref=e105]: 
+            - generic [ref=e106]: 
+          - paragraph [ref=e107]: 「30年以上通っています。値段も良心的ですが、何より顔なじみのスタッフさんとのおしゃべりが楽しみで足を運んでいます。」
+          - paragraph [ref=e108]: 鈴木さん（60代）
+    - generic [ref=e110]:
+      - paragraph [ref=e111]: SHOP INFO
+      - heading "店舗情報" [level=2] [ref=e112]
+      - generic [ref=e113]:
+        - generic [ref=e114]:
+          - term [ref=e115]: 住所
+          - definition [ref=e116]: 岩手県一関市〇〇町〇−〇
+        - generic [ref=e117]:
+          - term [ref=e118]: 電話番号
+          - definition [ref=e119]: 0191-00-0000
+        - generic [ref=e120]:
+          - term [ref=e121]: 営業時間
+          - definition [ref=e122]: 9:00 〜 20:00
+        - generic [ref=e123]:
+          - term [ref=e124]: 定休日
+          - definition [ref=e125]: 年中無休（年末年始を除く）
+        - generic [ref=e126]:
+          - term [ref=e127]: 駐車場
+          - definition [ref=e128]: 無料駐車場あり（〇〇台）
+      - link "詳しいアクセスを見る" [ref=e129] [cursor=pointer]:
+        - /url: /access
+  - contentinfo [ref=e130]:
+    - generic [ref=e131]:
+      - generic [ref=e132]:
+        - generic [ref=e133]:
+          - heading "スーパーせい屋" [level=2] [ref=e134]
+          - paragraph [ref=e135]:
+            - text: 岩手県一関市の地元密着型スーパーマーケット。
+            - text: 30年以上、地域の皆様に新鮮な食材をお届けしています。
+        - generic [ref=e136]:
+          - heading "メニュー" [level=3] [ref=e137]
+          - list [ref=e138]:
+            - listitem [ref=e139]:
+              - link "トップページ" [ref=e140] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e141]:
+              - link "お店について" [ref=e142] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e143]:
+              - link "商品・こだわり" [ref=e144] [cursor=pointer]:
+                - /url: /products
+            - listitem [ref=e145]:
+              - link "アクセス" [ref=e146] [cursor=pointer]:
+                - /url: /access
+        - generic [ref=e147]:
+          - heading "営業情報" [level=3] [ref=e148]
+          - generic [ref=e149]:
+            - generic [ref=e150]:
+              - term [ref=e151]: 営業時間
+              - definition [ref=e152]: 9:00 〜 20:00
+            - generic [ref=e153]:
+              - term [ref=e154]: 定休日
+              - definition [ref=e155]: 年中無休（年末年始を除く）
+            - generic [ref=e156]:
+              - term [ref=e157]: 住所
+              - definition [ref=e158]: 岩手県一関市〇〇町〇−〇
+            - generic [ref=e159]:
+              - term [ref=e160]: 電話
+              - definition [ref=e161]:
+                - link "0191-00-0000" [ref=e162] [cursor=pointer]:
+                  - /url: tel:0191000000
+      - paragraph [ref=e164]: © 2026 スーパーせい屋. All rights reserved.
+  - generic [ref=e167]:
+    - button "Menu" [ref=e168]:
+      - img [ref=e170]
+      - generic: Menu
+    - button "Inspect" [ref=e174]:
+      - img [ref=e176]
+      - generic: Inspect
+    - button "Audit" [ref=e178]:
+      - img [ref=e180]
+      - generic: Audit
+    - button "Settings" [ref=e183]:
+      - img [ref=e185]
+      - generic: Settings

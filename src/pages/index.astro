@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const reasons = [
+  {
+    icon: 'fa-solid fa-leaf',
+    title: '地元産・朝採れ野菜',
+    body: '一関近郊の契約農家から直送。スーパーの棚に並ぶのは収穫から数時間以内の新鮮な野菜たちです。',
+  },
+  {
+    icon: 'fa-solid fa-handshake',
+    title: '顔の見える関係',
+    body: '農家さん・漁師さんと30年以上のお付き合い。生産者の顔が見えるから安心してお買い物いただけます。',
+  },
+  {
+    icon: 'fa-solid fa-utensils',
+    title: '手作りのお惣菜',
+    body: '毎朝店内で仕込む手作りのお惣菜。添加物を極力使わない、家庭の味を大切にしています。',
+  },
+];
+
+const corners = [
+  { label: '野菜コーナー', icon: 'fa-solid fa-seedling', desc: '地元農家の朝採れ野菜' },
+  { label: '鮮魚コーナー', icon: 'fa-solid fa-fish', desc: '気仙沼・大船渡直送の鮮魚' },
+  { label: '精肉コーナー', icon: 'fa-solid fa-drumstick-bite', desc: '岩手県産ブランド肉を厳選' },
+  { label: 'お惣菜コーナー', icon: 'fa-solid fa-utensils', desc: '毎朝仕込む手作りお惣菜' },
+  { label: '地元産コーナー', icon: 'fa-solid fa-wheat-awn', desc: '一関・平泉の特産品を集めました' },
+];
+
+const reviews = [
+  {
+    name: '田中さん（40代・主婦）',
+    body: '引っ越してきてすぐに来店しました。野菜がとにかく新鮮で、スタッフさんの笑顔がとても素敵です。今ではすっかり常連です。',
+  },
+  {
+    name: '佐藤さん（30代・子育て中）',
+    body: 'お惣菜が美味しくて毎日寄ってしまいます。子どもたちも大好きで、帰り道に立ち寄るのが我が家の習慣になりました。',
+  },
+  {
+    name: '鈴木さん（60代）',
+    body: '30年以上通っています。値段も良心的ですが、何より顔なじみのスタッフさんとのおしゃべりが楽しみで足を運んでいます。',
+  },
+];
+---
+
+<BaseLayout
+  title="トップ"
+  description="岩手県一関市の地元密着型スーパーマーケット。地元農家の朝採れ野菜・手作りお惣菜・地元産食材を揃えています。"
+>
+  <Header />
+
+  <main>
+    <!-- ヒーローセクション -->
+    <section class="relative bg-[var(--color-accent)] text-white overflow-hidden">
+      <div class="max-w-6xl mx-auto px-4 py-24 md:py-36 flex flex-col md:flex-row items-center gap-10">
+        <div class="flex-1 text-center md:text-left">
+          <p class="text-sm font-medium tracking-widest mb-3 opacity-80">岩手県一関市 ／ 地元密着30年以上</p>
+          <h1 class="text-4xl md:text-6xl font-serif font-bold leading-snug mb-6">
+            地元の食材で、<br />毎日の食卓を豊かに。
+          </h1>
+          <p class="text-lg opacity-90 mb-8 leading-relaxed">
+            朝採れ野菜・気仙沼の鮮魚・手作りのお惣菜。<br class="hidden md:block" />
+            大切な人たちとの食卓のために、今日も丁寧に仕入れています。
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+            <a
+              href="/products"
+              class="inline-block bg-white text-[var(--color-accent)] font-bold px-8 py-3 rounded-full hover:bg-[var(--color-bg)] transition-colors"
+            >
+              商品・こだわりを見る
+            </a>
+            <a
+              href="/access"
+              class="inline-block border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-[var(--color-accent)] transition-colors"
+            >
+              アクセスを確認する
+            </a>
+          </div>
+        </div>
+        <figure class="flex-1 w-full max-w-sm md:max-w-none">
+          <img
+            src="/外観.png"
+            alt="スーパーせい屋 店舗外観"
+            class="w-full rounded-2xl object-cover shadow-lg aspect-[4/3]"
+            loading="eager"
+          />
+          <figcaption class="sr-only">岩手県一関市にあるスーパーせい屋の店舗外観</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 選ばれる理由 -->
+    <section class="py-20 bg-[var(--color-surface)]">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="text-sm font-medium text-[var(--color-sub-accent)] tracking-widest mb-2">WHY SUPER SEIYA</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-[var(--color-text)]">
+            地元のお客様に選ばれる理由
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {reasons.map(({ icon, title, body }) => (
+            <article class="text-center p-8 rounded-2xl bg-[var(--color-bg)] border border-[var(--color-border)]">
+              <div class="text-4xl mb-4 text-[var(--color-accent)]"><i class={icon} aria-hidden="true"></i></div>
+              <h3 class="font-serif font-bold text-xl mb-3 text-[var(--color-text)]">{title}</h3>
+              <p class="text-[var(--color-text-muted)] text-sm leading-relaxed">{body}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 商品コーナー紹介 -->
+    <section class="py-20">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="text-sm font-medium text-[var(--color-sub-accent)] tracking-widest mb-2">OUR CORNERS</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-[var(--color-text)]">
+            充実の売り場をご紹介
+          </h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          {corners.map(({ label, icon, desc }) => (
+            <a
+              href="/products"
+              class="group block text-center p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:shadow-md transition-all"
+            >
+              <div class="text-3xl mb-3 text-[var(--color-accent)] group-hover:text-[var(--color-accent-hover)] transition-colors"><i class={icon} aria-hidden="true"></i></div>
+              <h3 class="font-bold text-sm text-[var(--color-text)] mb-1 group-hover:text-[var(--color-accent)] transition-colors">
+                {label}
+              </h3>
+              <p class="text-xs text-[var(--color-text-muted)]">{desc}</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 口コミ -->
+    <section class="py-20 bg-[var(--color-surface)]">
+      <div class="max-w-6xl mx-auto px-4">
+        <div class="text-center mb-12">
+          <p class="text-sm font-medium text-[var(--color-sub-accent)] tracking-widest mb-2">REVIEWS</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-[var(--color-text)]">
+            お客様の声
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {reviews.map(({ name, body }) => (
+            <article class="p-6 rounded-2xl bg-[var(--color-bg)] border border-[var(--color-border)]">
+              <div class="text-[var(--color-accent)] text-lg mb-3 flex gap-0.5" aria-label="5点満点">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+              </div>
+              <blockquote class="text-sm text-[var(--color-text)] leading-relaxed mb-4">
+                <p>「{body}」</p>
+              </blockquote>
+              <cite class="text-xs text-[var(--color-text-muted)] font-medium not-italic">{name}</cite>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 基本情報 -->
+    <section class="py-20">
+      <div class="max-w-3xl mx-auto px-4 text-center">
+        <p class="text-sm font-medium text-[var(--color-sub-accent)] tracking-widest mb-2">SHOP INFO</p>
+        <h2 class="text-3xl md:text-4xl font-serif font-bold text-[var(--color-text)] mb-10">
+          店舗情報
+        </h2>
+        <dl class="text-left bg-[var(--color-surface)] border border-[var(--color-border)] rounded-2xl overflow-hidden text-sm">
+          {[
+            { term: '住所', desc: '岩手県一関市〇〇町〇−〇' },
+            { term: '電話番号', desc: '0191-00-0000' },
+            { term: '営業時間', desc: '9:00 〜 20:00' },
+            { term: '定休日', desc: '年中無休（年末年始を除く）' },
+            { term: '駐車場', desc: '無料駐車場あり（〇〇台）' },
+          ].map(({ term, desc }) => (
+            <div class="flex flex-col sm:flex-row sm:items-center border-b border-[var(--color-border)] last:border-b-0">
+              <dt class="sm:w-32 shrink-0 font-bold text-[var(--color-text-muted)] bg-[var(--color-bg)] px-5 py-4 sm:border-r border-[var(--color-border)]">
+                {term}
+              </dt>
+              <dd class="px-5 py-4 text-[var(--color-text)]">{desc}</dd>
+            </div>
+          ))}
+        </dl>
+        <a
+          href="/access"
+          class="inline-block mt-8 bg-[var(--color-accent)] text-white font-bold px-8 py-3 rounded-full hover:bg-[var(--color-accent-hover)] transition-colors"
+        >
+          詳しいアクセスを見る
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,59 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="bg-[var(--color-text)] text-[var(--color-bg)] mt-20">
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <!-- 店舗情報 -->
+      <div>
+        <h2 class="font-serif text-xl font-bold mb-4 text-white">スーパーせい屋</h2>
+        <p class="text-sm text-[var(--color-border)] leading-relaxed">
+          岩手県一関市の地元密着型スーパーマーケット。<br />
+          30年以上、地域の皆様に新鮮な食材をお届けしています。
+        </p>
+      </div>
+
+      <!-- ナビゲーション -->
+      <div>
+        <h3 class="font-bold mb-4 text-white text-sm uppercase tracking-wider">メニュー</h3>
+        <ul class="flex flex-col gap-2 text-sm text-[var(--color-border)]">
+          <li><a href="/" class="hover:text-white transition-colors">トップページ</a></li>
+          <li><a href="/about" class="hover:text-white transition-colors">お店について</a></li>
+          <li><a href="/products" class="hover:text-white transition-colors">商品・こだわり</a></li>
+          <li><a href="/access" class="hover:text-white transition-colors">アクセス</a></li>
+        </ul>
+      </div>
+
+      <!-- 営業情報 -->
+      <div>
+        <h3 class="font-bold mb-4 text-white text-sm uppercase tracking-wider">営業情報</h3>
+        <address class="not-italic">
+          <dl class="text-sm text-[var(--color-border)] space-y-1">
+            <div class="flex gap-2">
+              <dt class="shrink-0">営業時間</dt>
+              <dd>9:00 〜 20:00</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="shrink-0">定休日</dt>
+              <dd>年中無休（年末年始を除く）</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="shrink-0">住所</dt>
+              <dd>岩手県一関市〇〇町〇−〇</dd>
+            </div>
+            <div class="flex gap-2">
+              <dt class="shrink-0">電話</dt>
+              <dd><a href="tel:0191000000" class="hover:text-white transition-colors">0191-00-0000</a></dd>
+            </div>
+          </dl>
+        </address>
+      </div>
+    </div>
+
+    <div class="border-t border-[var(--color-text-muted)] mt-8 pt-6 text-center text-xs text-[var(--color-text-muted)]">
+      <p>&copy; {currentYear} スーパーせい屋. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

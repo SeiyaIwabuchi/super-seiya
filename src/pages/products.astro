@@ -1,0 +1,143 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const corners = [
+  {
+    id: 'vegetables',
+    icon: 'fa-solid fa-seedling',
+    image: '/野菜コーナー.png',
+    label: '野菜コーナー',
+    tagline: '朝採れたての新鮮さをそのままお届け',
+    body: [
+      '一関近郊の契約農家から直送された野菜は、収穫からわずか数時間でお店の棚に並びます。土の香りがまだ残る、生き生きとした野菜たちです。',
+      '農薬の使用を最小限に抑えた「特別栽培農産物」や無農薬野菜も積極的に取り扱っています。安心して家族に食べさせられる野菜を選び抜いています。',
+    ],
+    features: ['契約農家直送', '特別栽培農産物取扱', '旬の食材が豊富'],
+  },
+  {
+    id: 'seafood',
+    icon: 'fa-solid fa-fish',
+    image: '/鮮魚コーナー.png',
+    label: '鮮魚コーナー',
+    tagline: '気仙沼・大船渡から届く三陸の恵み',
+    body: [
+      '三陸沖の豊かな海で育った魚介類を、気仙沼・大船渡の市場から毎朝直送。水揚げから24時間以内にお客様の食卓へ届けることにこだわっています。',
+      '店主自ら市場に足を運び、目利きで選んだ旬の魚のみを仕入れます。サンマ・イカ・ホタテ・ウニなど、三陸ならではの魚介を季節ごとにお楽しみいただけます。',
+    ],
+    features: ['三陸直送', '水揚げ24時間以内', '季節の旬魚を豊富に'],
+  },
+  {
+    id: 'meat',
+    icon: 'fa-solid fa-drumstick-bite',
+    image: '/生肉コーナー.png',
+    label: '精肉コーナー',
+    tagline: '岩手の豊かな大地が育んだブランド肉',
+    body: [
+      '岩手県産の「岩手短角牛」や「前沢牛」、岩手ポークなど地元ブランドの精肉を中心に取り扱っています。生産者の顔が見える食肉を、できる限り産地直送でお届けします。',
+      '部位ごとに最適な調理法をスタッフがご案内します。お気軽にお声がけください。特売日には地元産ブランド肉がお買い得価格で登場します。',
+    ],
+    features: ['岩手ブランド肉中心', '産地直送', 'スタッフが部位ごとにご案内'],
+  },
+  {
+    id: 'delicatessen',
+    icon: 'fa-solid fa-utensils',
+    image: '/惣菜コーナー.png',
+    label: 'お惣菜コーナー',
+    tagline: '毎朝仕込む、添加物控えめの手作り惣菜',
+    body: [
+      '揚げたて・炊きたてにこだわった手作りのお惣菜が毎日登場します。素材はもちろん店内で仕入れた地元産食材。余計な添加物を使わない、家庭的な味が人気の秘密です。',
+      '娘が手がける季節のレシピをもとにしたお惣菜が特に好評。「今日の夕飯はせい屋のお惣菜で」という常連さんも多く、昼過ぎには売り切れることもあります。',
+    ],
+    features: ['毎朝手作り', '地元産食材のみ使用', '添加物控えめ'],
+  },
+  {
+    id: 'local',
+    icon: 'fa-solid fa-wheat-awn',
+    image: '/その他.png',
+    label: '地元産コーナー',
+    tagline: '一関・平泉の特産品を一堂に集めました',
+    body: [
+      '一関市・平泉町を中心とした岩手県内の特産品・加工品を集めたコーナーです。地元の醤油・みそ・漬物・お菓子など、ここでしか手に入らないアイテムが揃っています。',
+      '地産地消を応援するため、生産者との直接取引にこだわっています。お土産にも、地元の味を楽しむ日常使いにも最適です。',
+    ],
+    features: ['一関・平泉の特産品', '生産者直取引', 'お土産にも最適'],
+  },
+];
+---
+
+<BaseLayout
+  title="商品・こだわり"
+  description="スーパーせい屋の野菜・鮮魚・精肉・お惣菜・地元産コーナーの仕入れこだわりをご紹介します。"
+  path="/products"
+>
+  <Header />
+
+  <main>
+    <!-- ページヘッダー -->
+    <section class="bg-[var(--color-accent)] text-white py-16 md:py-24">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <p class="text-sm font-medium tracking-widest mb-3 opacity-80">PRODUCTS & COMMITMENT</p>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold">商品・こだわり</h1>
+        <p class="mt-4 opacity-80 text-sm">各コーナーの仕入れへのこだわりをご紹介します</p>
+      </div>
+    </section>
+
+    <!-- コーナー一覧 -->
+    {corners.map(({ id, icon, image, label, tagline, body, features }, i) => (
+      <section
+        id={id}
+        class={`py-20 ${i % 2 === 1 ? 'bg-[var(--color-surface)]' : ''}`}
+      >
+        <div class="max-w-5xl mx-auto px-4">
+          <div class={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}>
+            <div class="w-full md:w-80 shrink-0">
+              <img
+                src={image}
+                alt={label}
+                class="w-full rounded-2xl object-cover aspect-square shadow-sm"
+                loading="lazy"
+              />
+            </div>
+            <!-- テキスト -->
+            <div class="flex-1">
+              <p class="text-sm font-medium text-[var(--color-sub-accent)] tracking-widest mb-2">{tagline}</p>
+              <h2 class="text-3xl font-serif font-bold text-[var(--color-text)] mb-6">{label}</h2>
+              <div class="space-y-4 text-sm text-[var(--color-text)] leading-relaxed mb-6">
+                {body.map((p) => <p>{p}</p>)}
+              </div>
+              <!-- 特徴タグ -->
+              <ul class="flex flex-wrap gap-2">
+                {features.map((f) => (
+                  <li class="text-xs px-3 py-1 rounded-full bg-[var(--color-accent)] text-white font-medium">
+                    {f}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    ))}
+
+    <!-- CTA -->
+    <section class="py-16 bg-[var(--color-accent)] text-white text-center">
+      <div class="max-w-2xl mx-auto px-4">
+        <h2 class="text-3xl font-serif font-bold mb-4">ぜひお店に足を運んでください</h2>
+        <p class="text-sm opacity-90 mb-8 leading-relaxed">
+          百聞は一見にしかず。実際に店内を見て、食材に触れて、スタッフとお話しください。<br />
+          毎日の食卓が少し豊かになるお手伝いができれば幸いです。
+        </p>
+        <a
+          href="/access"
+          class="inline-block bg-white text-[var(--color-accent)] font-bold px-8 py-3 rounded-full hover:bg-[var(--color-bg)] transition-colors"
+        >
+          アクセスを見る
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

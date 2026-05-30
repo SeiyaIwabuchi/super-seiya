@@ -1,0 +1,98 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  ogImage?: string;
+  path?: string;
+}
+
+const {
+  title,
+  description,
+  ogImage = '/og-default.jpg',
+  path = Astro.url.pathname,
+} = Astro.props;
+
+const siteUrl = 'https://super-seiya.example.com'; // TODO: 実際のドメインに差し替え
+const canonicalUrl = `${siteUrl}${path}`;
+const ogImageUrl = `${siteUrl}${ogImage}`;
+
+const schemaOrg = {
+  '@context': 'https://schema.org',
+  '@type': 'GroceryStore',
+  name: 'スーパーせい屋',
+  description: '岩手県一関市の地元密着型スーパーマーケット。30年以上、地元の食材と人のつながりを大切にしています。',
+  url: siteUrl,
+  address: {
+    '@type': 'PostalAddress',
+    addressRegion: '岩手県',
+    addressLocality: '一関市',
+    addressCountry: 'JP',
+  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '09:00',
+      closes: '20:00',
+    },
+  ],
+};
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+
+    <!-- SEO -->
+    <title>{title} | スーパーせい屋</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+
+    <!-- OGP -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={`${title} | スーパーせい屋`} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content="ja_JP" />
+    <meta property="og:site_name" content="スーパーせい屋" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={`${title} | スーパーせい屋`} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome 6 Free -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- schema.org 構造化データ -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

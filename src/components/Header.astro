@@ -1,0 +1,93 @@
+---
+const navLinks = [
+  { href: '/', label: 'トップ' },
+  { href: '/about', label: 'お店について' },
+  { href: '/products', label: '商品・こだわり' },
+  { href: '/access', label: 'アクセス' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-[var(--color-bg)] border-b border-[var(--color-border)] shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
+
+    <!-- ロゴ -->
+    <a href="/" class="flex items-center gap-2 group" aria-label="スーパーせい屋 トップページへ">
+      <span class="text-2xl font-bold font-serif text-[var(--color-accent)] group-hover:opacity-80 transition-opacity">
+        スーパーせい屋
+      </span>
+    </a>
+
+    <!-- PC ナビゲーション -->
+    <nav aria-label="メインナビゲーション" class="hidden md:flex items-center gap-6">
+      {navLinks.map(({ href, label }) => (
+        <a
+          href={href}
+          class={[
+            'text-sm font-medium transition-colors hover:text-[var(--color-accent)]',
+            currentPath === href
+              ? 'text-[var(--color-accent)] border-b-2 border-[var(--color-accent)] pb-0.5'
+              : 'text-[var(--color-text-muted)]',
+          ].join(' ')}
+          aria-current={currentPath === href ? 'page' : undefined}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+
+    <!-- モバイル ハンバーガーボタン -->
+    <button
+      id="menu-btn"
+      type="button"
+      aria-controls="mobile-menu"
+      aria-expanded="false"
+      aria-label="メニューを開く"
+      class="md:hidden p-2 rounded-md text-[var(--color-text-muted)] hover:text-[var(--color-accent)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-accent)]"
+    >
+      <!-- ハンバーガーアイコン -->
+      <svg id="icon-open" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+      <!-- クローズアイコン -->
+      <svg id="icon-close" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+  </div>
+
+  <!-- モバイルメニュー -->
+  <div id="mobile-menu" class="hidden md:hidden border-t border-[var(--color-border)] bg-[var(--color-bg)]">
+    <nav aria-label="モバイルナビゲーション" class="flex flex-col px-4 py-3 gap-1">
+      {navLinks.map(({ href, label }) => (
+        <a
+          href={href}
+          class={[
+            'py-2 px-3 rounded-md text-sm font-medium transition-colors',
+            currentPath === href
+              ? 'bg-[var(--color-accent)] text-white'
+              : 'text-[var(--color-text)] hover:bg-[var(--color-border)]',
+          ].join(' ')}
+          aria-current={currentPath === href ? 'page' : undefined}
+        >
+          {label}
+        </a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  btn?.addEventListener('click', () => {
+    const isOpen = menu?.classList.toggle('hidden') === false;
+    btn.setAttribute('aria-expanded', String(isOpen));
+    iconOpen?.classList.toggle('hidden', isOpen);
+    iconClose?.classList.toggle('hidden', !isOpen);
+  });
+</script>

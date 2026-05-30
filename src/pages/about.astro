@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const farmers = [
+  {
+    name: '〇〇農園（一関市）',
+    produce: '米・ほうれん草・トマト',
+    comment: '「化学肥料を使わず、土の力で育てることにこだわっています。せい屋さんに並ぶのがいつも楽しみです」',
+  },
+  {
+    name: '△△農場（奥州市）',
+    produce: 'ネギ・ジャガイモ・玉ねぎ',
+    comment: '「旬の時期に採れたものを、その日のうちに届けたい。それがお客様への一番のご馳走だと思っています」',
+  },
+];
+---
+
+<BaseLayout
+  title="お店について"
+  description="スーパーせい屋の創業ストーリー・店主のこだわり・地元農家さんとの関係についてご紹介します。"
+  path="/about"
+>
+  <Header />
+
+  <main>
+    <!-- ページヘッダー -->
+    <section class="bg-[var(--color-accent)] text-white py-12 md:py-16">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <p class="text-sm font-medium tracking-widest mb-2 opacity-70">ABOUT US</p>
+        <h1 class="text-4xl md:text-5xl font-serif font-bold">お店について</h1>
+        <p class="mt-3 text-sm opacity-80">一関市で30年以上、地域とともに歩んできた私たちのこと</p>
+      </div>
+    </section>
+
+    <!-- 創業ストーリー -->
+    <section class="py-14 md:py-16">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-10">
+          <p class="text-xs font-medium text-[var(--color-sub-accent)] tracking-widest mb-2">OUR STORY</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-[var(--color-text)]">
+            創業のはじまり
+          </h2>
+          <div class="mt-3 mx-auto w-12 h-0.5 bg-[var(--color-sub-accent)] rounded-full"></div>
+        </div>
+        <div class="max-w-2xl mx-auto">
+          <div class="text-[var(--color-text)] text-sm leading-relaxed space-y-4">
+            <p>
+              スーパーせい屋は、今から30年以上前に一関市の中心部に産声を上げました。創業者である現店主の父が「地元の人たちに、新鮮で安全な食材を届けたい」という思いで小さな青果店として始めたのがルーツです。
+            </p>
+            <p>
+              少しずつ品揃えを広げ、今では野菜・鮮魚・精肉・お惣菜・地元産品と幅広く取り扱うようになりました。時代が変わっても変わらないのは、「顔の見える関係」を大切にするという創業当時からの精神です。
+            </p>
+            <p>
+              現在は2代目店主が父から受け継いだ想いを胸に、毎朝早くから仕入れに向かっています。地域の皆さんに「今日もせい屋で買ってよかった」と思っていただけるよう、日々精進しています。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-14 md:py-16 bg-[var(--color-surface)]">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-10">
+          <p class="text-xs font-medium text-[var(--color-sub-accent)] tracking-widest mb-2">OUR COMMITMENT</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-[var(--color-text)]">
+            店主のこだわり
+          </h2>
+          <div class="mt-3 mx-auto w-12 h-0.5 bg-[var(--color-sub-accent)] rounded-full"></div>
+        </div>
+        <div class="max-w-2xl mx-auto">
+          <blockquote class="text-[var(--color-text)] text-sm leading-relaxed space-y-4">
+            <p>
+              「おいしいものは、素材が9割」これが店主の口癖です。どんなに調理の腕がよくても、素材が良くなければ美味しい料理はできない。だからこそ、仕入れには誰よりも時間をかけています。
+            </p>
+            <p>
+              毎朝4時には仕入れ先を巡り、その日の最も状態の良い食材だけを選び抜きます。鮮魚は目の輝き・エラの色・身の弾力を一つひとつ確認。野菜は農家さんの顔を思い浮かべながら手に取ります。
+            </p>
+            <p>
+              「値段が少し高くても、本当に良いものを届けたい。それが長く続けてきたせい屋の約束です」
+            </p>
+            <footer class="border-t border-[var(--color-border)] pt-3 mt-2">
+              <cite class="font-bold text-[var(--color-text-muted)] not-italic">— 店主　〇〇 〇〇</cite>
+            </footer>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- 農家さんとの関係 -->
+    <section class="py-14 md:py-16">
+      <div class="max-w-5xl mx-auto px-4">
+        <div class="text-center mb-10">
+          <p class="text-xs font-medium text-[var(--color-sub-accent)] tracking-widest mb-2">OUR PARTNERS</p>
+          <h2 class="text-3xl md:text-4xl font-serif font-bold text-[var(--color-text)]">
+            農家さんとのつながり
+          </h2>
+          <div class="mt-3 mx-auto w-12 h-0.5 bg-[var(--color-sub-accent)] rounded-full"></div>
+          <p class="mt-4 text-sm text-[var(--color-text-muted)] leading-relaxed">
+            スーパーせい屋が大切にしているのは「顔の見える関係」。<br />
+            長年連れ添ってきた農家さん・生産者さんをご紹介します。
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {farmers.map(({ name, produce, comment }) => (
+            <article class="flex gap-5 p-6 rounded-2xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:shadow-md transition-shadow">
+              <div class="w-16 h-16 shrink-0 rounded-xl bg-[var(--color-bg)] border border-[var(--color-border)] flex items-center justify-center text-xl text-[var(--color-accent)]">
+                <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="font-bold text-[var(--color-text)] mb-1">{name}</h3>
+                <p class="text-xs text-[var(--color-sub-accent)] mb-2 font-medium">取扱品目：{produce}</p>
+                <blockquote class="text-sm text-[var(--color-text-muted)] leading-relaxed">
+                  <p>{comment}</p>
+                </blockquote>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-14 bg-[var(--color-accent)] text-white text-center">
+      <div class="max-w-2xl mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-serif font-bold mb-3">ぜひ一度、お気軽にご来店ください</h2>
+        <p class="text-sm opacity-80 mb-8 leading-relaxed">
+          スタッフ一同、皆様のご来店をお待ちしております。
+        </p>
+        <a
+          href="/access"
+          class="inline-block bg-white text-[var(--color-accent)] font-bold px-8 py-3 rounded-full hover:bg-[var(--color-bg)] transition-colors"
+        >
+          アクセスを見る
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>
