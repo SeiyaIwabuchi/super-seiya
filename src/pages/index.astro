@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { url } from '../utils/url';
 
 const reasons = [
   {
@@ -66,13 +67,13 @@ const reviews = [
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
             <a
-              href="/products"
+              href={url('/products')}
               class="inline-block bg-white text-[var(--color-accent)] font-bold px-8 py-3 rounded-full hover:bg-[var(--color-bg)] transition-colors"
             >
               商品・こだわりを見る
             </a>
             <a
-              href="/access"
+              href={url('/access')}
               class="inline-block border-2 border-white text-white font-bold px-8 py-3 rounded-full hover:bg-white hover:text-[var(--color-accent)] transition-colors"
             >
               アクセスを確認する
@@ -124,7 +125,7 @@ const reviews = [
         <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
           {corners.map(({ label, icon, desc }) => (
             <a
-              href="/products"
+              href={url('/products')}
               class="group block text-center p-6 rounded-xl bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-accent)] hover:shadow-md transition-all"
             >
               <div class="text-3xl mb-3 text-[var(--color-accent)] group-hover:text-[var(--color-accent-hover)] transition-colors"><i class={icon} aria-hidden="true"></i></div>
@@ -191,7 +192,7 @@ const reviews = [
           ))}
         </dl>
         <a
-          href="/access"
+          href={url('/access')}
           class="inline-block mt-8 bg-[var(--color-accent)] text-white font-bold px-8 py-3 rounded-full hover:bg-[var(--color-accent-hover)] transition-colors"
         >
           詳しいアクセスを見る

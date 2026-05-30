@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { url } from '../utils/url';
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -132,7 +133,7 @@ const corners = [
           毎日の食卓が少し豊かになるお手伝いができれば幸いです。
         </p>
         <a
-          href="/access"
+          href={url('/access')}
           class="inline-block bg-white text-[var(--color-accent)] font-bold px-8 py-3 rounded-full hover:bg-[var(--color-bg)] transition-colors"
         >
           アクセスを見る
