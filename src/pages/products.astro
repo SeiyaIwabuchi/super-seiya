@@ -3,11 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
 const corners = [
   {
     id: 'vegetables',
     icon: 'fa-solid fa-seedling',
-    image: '/野菜コーナー.png',
+    image: `${base}/野菜コーナー.png`,
     label: '野菜コーナー',
     tagline: '朝採れたての新鮮さをそのままお届け',
     body: [
@@ -19,7 +21,7 @@ const corners = [
   {
     id: 'seafood',
     icon: 'fa-solid fa-fish',
-    image: '/鮮魚コーナー.png',
+    image: `${base}/鮮魚コーナー.png`,
     label: '鮮魚コーナー',
     tagline: '気仙沼・大船渡から届く三陸の恵み',
     body: [
@@ -31,7 +33,7 @@ const corners = [
   {
     id: 'meat',
     icon: 'fa-solid fa-drumstick-bite',
-    image: '/生肉コーナー.png',
+    image: `${base}/生肉コーナー.png`,
     label: '精肉コーナー',
     tagline: '岩手の豊かな大地が育んだブランド肉',
     body: [
@@ -43,7 +45,7 @@ const corners = [
   {
     id: 'delicatessen',
     icon: 'fa-solid fa-utensils',
-    image: '/惣菜コーナー.png',
+    image: `${base}/惣菜コーナー.png`,
     label: 'お惣菜コーナー',
     tagline: '毎朝仕込む、添加物控えめの手作り惣菜',
     body: [
@@ -55,7 +57,7 @@ const corners = [
   {
     id: 'local',
     icon: 'fa-solid fa-wheat-awn',
-    image: '/その他.png',
+    image: `${base}/その他.png`,
     label: '地元産コーナー',
     tagline: '一関・平泉の特産品を一堂に集めました',
     body: [
