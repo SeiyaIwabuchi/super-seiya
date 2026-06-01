@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import storeFrontImage from '../assets/外観.png';
 
 interface Props {
   title: string;
@@ -11,11 +12,11 @@ interface Props {
 const {
   title,
   description,
-  ogImage = '/外観.png',
+  ogImage = storeFrontImage.src,
   path = Astro.url.pathname,
 } = Astro.props;
 
-const siteUrl = 'https://super-seiya.example.com'; // TODO: 実際のドメインに差し替え
+const siteUrl = 'https://SeiyaIwabuchi.github.io/super-seiya'; // TODO: 実際のドメインに差し替え
 const canonicalUrl = `${siteUrl}${path}`;
 const ogImageUrl = `${siteUrl}${ogImage}`;
 

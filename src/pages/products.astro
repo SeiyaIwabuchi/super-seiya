@@ -3,14 +3,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { url } from '../utils/url';
-
-const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+import { Image } from 'astro:assets';
+import vegImage from '../assets/野菜コーナー.png';
+import seafoodImage from '../assets/鮮魚コーナー.png';
+import meatImage from '../assets/生肉コーナー.png';
+import delicatessenImage from '../assets/惣菜コーナー.png';
+import localImage from '../assets/その他.png';
 
 const corners = [
   {
     id: 'vegetables',
     icon: 'fa-solid fa-seedling',
-    image: `${base}/野菜コーナー.png`,
+    image: vegImage,
     label: '野菜コーナー',
     tagline: '朝採れたての新鮮さをそのままお届け',
     body: [
@@ -22,7 +26,7 @@ const corners = [
   {
     id: 'seafood',
     icon: 'fa-solid fa-fish',
-    image: `${base}/鮮魚コーナー.png`,
+    image: seafoodImage,
     label: '鮮魚コーナー',
     tagline: '気仙沼・大船渡から届く三陸の恵み',
     body: [
@@ -34,7 +38,7 @@ const corners = [
   {
     id: 'meat',
     icon: 'fa-solid fa-drumstick-bite',
-    image: `${base}/生肉コーナー.png`,
+    image: meatImage,
     label: '精肉コーナー',
     tagline: '岩手の豊かな大地が育んだブランド肉',
     body: [
@@ -46,7 +50,7 @@ const corners = [
   {
     id: 'delicatessen',
     icon: 'fa-solid fa-utensils',
-    image: `${base}/惣菜コーナー.png`,
+    image: delicatessenImage,
     label: 'お惣菜コーナー',
     tagline: '毎朝仕込む、添加物控えめの手作り惣菜',
     body: [
@@ -58,7 +62,7 @@ const corners = [
   {
     id: 'local',
     icon: 'fa-solid fa-wheat-awn',
-    image: `${base}/その他.png`,
+    image: localImage,
     label: '地元産コーナー',
     tagline: '一関・平泉の特産品を一堂に集めました',
     body: [
@@ -96,10 +100,11 @@ const corners = [
         <div class="max-w-5xl mx-auto px-4">
           <div class={`flex flex-col ${i % 2 === 1 ? 'md:flex-row-reverse' : 'md:flex-row'} gap-10 items-center`}>
             <div class="w-full md:w-80 shrink-0">
-              <img
+              <Image
                 src={image}
                 alt={label}
                 class="w-full rounded-2xl object-cover aspect-square shadow-sm"
+                width={640}
                 loading="lazy"
               />
             </div>
